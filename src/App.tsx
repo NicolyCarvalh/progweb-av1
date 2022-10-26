@@ -17,7 +17,7 @@ function App() {
    * (2pt) Crie uma variável de estado com o nome 'games' e defina como inicialmente um array vazio
    */
 
-  const games = useState([])
+  const [games, dGames] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3333/games').then(response => response.json()).then(data => {
@@ -25,7 +25,7 @@ function App() {
        * (1pt) atribua o conteúdo 'data' para a variável games
        */
 
-      
+      dGames(data)
     }
     )
   }, [])
